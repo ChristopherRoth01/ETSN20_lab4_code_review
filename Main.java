@@ -1,12 +1,19 @@
+import java.io.IOException;
+
+
 public class Main {
 
     private Main() {
     }
 
-
     public static void main(String[] args) {
-        StringManipulator manipulator = new StringManipulator();
-        String str = manipulator.trimAndConcat("    Hello     ", "     World    ");
-        System.out.println(str); // HelloWorld
+        FileSearcher fileSearcher = new FileSearcher("res/test.txt");
+        String pattern = "Lorem";
+        String file = "res/test.txt";
+        try {
+            System.out.println(fileSearcher.fileSearch(pattern, file));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }
