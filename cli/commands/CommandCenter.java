@@ -24,8 +24,8 @@ public class CommandCenter {
      * @param session the Session to be initiated.
      */
     public CommandCenter(final Session session) {
-      //  commandPackage.add(new AddSwitch());
-   
+        commandPackage.add(new Exit());
+        commandPackage.add(new Search());
         this.session = session;
     }
 
@@ -46,7 +46,6 @@ public class CommandCenter {
 
         matchingCommand.setArguments(input);
         matchingCommand.setSession(session);
-
         return matchingCommand;
     }
 }

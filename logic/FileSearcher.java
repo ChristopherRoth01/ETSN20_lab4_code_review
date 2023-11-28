@@ -1,4 +1,4 @@
-
+package logic;
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
@@ -12,13 +12,16 @@ public class FileSearcher {
     private File file = null;
 
     public FileSearcher() {
+
     }
 
     public void setPath(String path) {
         this.file = new File(path);
     }
-    
+
     public String fileSearch(String pattern, String file) throws IOException {
+        this.setPath(file);
+        System.out.println(this.file.getAbsolutePath());
         try {
             this.fileReader = new BufferedReader(new FileReader(this.file));
         } catch (FileNotFoundException e) {
@@ -38,7 +41,7 @@ public class FileSearcher {
     }
 
     public boolean isValidLocation(String location) {
-        String regex = "([a-zA-Z]:)?(\\\\[a-zA-Z0-9_.-]+)+\\\\?";
+        String regex = "([a-zA-Z]:)?(\\[a-zA-Z0-9_.-]+)+\\?";
         return location.matches(regex);
     }
 

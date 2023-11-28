@@ -1,5 +1,6 @@
-
+package cli;
 import java.io.BufferedReader;
+import java.io.IOException;
 import java.io.InputStreamReader;
 
 import cli.commands.Command;
@@ -48,6 +49,9 @@ public class Session {
                 command.execute();
             } catch (InputException i) {
                 System.out.println(i.getMessage());
+            } catch (IOException e) {
+                // TODO Auto-generated catch block
+                e.printStackTrace();
             }
         }
     }
