@@ -26,6 +26,7 @@ public class CommandCenter {
     public CommandCenter(final Session session) {
         commandPackage.add(new Exit());
         commandPackage.add(new Search());
+        commandPackage.add(new Help();
         this.session = session;
     }
 

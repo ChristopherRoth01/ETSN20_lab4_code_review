@@ -50,8 +50,8 @@ public class Session {
             } catch (InputException i) {
                 System.out.println(i.getMessage());
             } catch (IOException e) {
-                // TODO Auto-generated catch block
-                e.printStackTrace();
+                System.out.println("Couldn't resolve path.");
+
             }
         }
     }

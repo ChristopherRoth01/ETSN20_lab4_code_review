@@ -11,10 +11,6 @@ public class FileSearcher {
     private BufferedReader fileReader = null;
     private File file = null;
 
-    public FileSearcher() {
-
-    }
-
     public void setPath(String path) {
         this.file = new File(path);
     }
@@ -36,13 +32,7 @@ public class FileSearcher {
             }
             i++;
         }
-
         return toReturn;
-    }
-
-    public boolean isValidLocation(String location) {
-        String regex = "([a-zA-Z]:)?(\\[a-zA-Z0-9_.-]+)+\\?";
-        return location.matches(regex);
     }
 
 }
